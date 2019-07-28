@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title> Main app form </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="padding-left: 5%">
+    <h2>Форма для подачи жалобы</h2>
+    <div class="container" style="padding-top: 20pt">
+        <form action="/form" method="POST">
+            <div class="form-group">
+                <label for="sender_id">От лица:</label>
+                <input type="text" class="form-control" name="sender_id" maxlength="100" placeholder="Юридическое лицо" accept-charset="utf-8">
+            </div>
+
+            <div class="form-group">
+                    <label for="type">Тип обращения</label>
+                    <select class="form-control" name="type">
+                      <option value="" selected disabled>Выберите из списка</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+
+            <div class="form-group">
+                <label for="form-text">Суть проблемы</label>
+                <textarea class="form-control" name="form-text" rows="7"
+                placeholder="Опишите суть проблемы. Не более 2000 символов"
+                ></textarea>
+            </div>
+
+            <button type="submit">Отправить жалобу</button>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title> Task status page </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>Состояние задачи {{ task.id }}</h1>
+
+    <p>Инициатор задачи: {{task.sender}}</p>
+    <p>Текст задачи</p>
+    <p>{{task.text}}</p>
+
+    <p>Статус задачи: {{task.status}}</p>
+
+    {% if resolved %}
+
+    <h2>Ответ</h2>
+
+    <p>{{solution.text}}</p>
+    
+    {% endif %}
+</body>
