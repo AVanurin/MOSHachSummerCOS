@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title> Moscow Hachaton 2019 summer App main form </title>
+{% endblock head %}
+
+{% block content %}
+    <div class="container" style="padding-top: 20pt">
+        <form action="/form" method="POST">
+
+            <input type="checkbox" name='flag' value="off">
+
+            <div class="form-group">
+                <label for="form-text">Введите описание вашей проблемы</label>
+                <textarea class="form-control" name="form-text" rows="7"
+                placeholder="На русском языке. Не более 2000 символов"
+                ></textarea>
+            </div>
+
+            <button type="submit">Получить рекомендации</button>
+        </form>
+    </div>
+
+
+{% endblock content %}

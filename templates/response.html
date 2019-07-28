@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Response of the aidoc page</title>
+{% endblock head %}
+
+{% block content %}
+<div style="padding-left: 5%; padding-right: 5%">
+<h2>Ваш запрос</h2>
+
+<p>{{ text }}</p>
+
+<a href="/"><p>Новый запрос</p></a>
+
+<h2>Результат</h2>
+<ul class="list-group">
+{% for r in result  %}
+        <li class="list-group-item">
+            <p>{{r.name}}</p>
+            <p>{{r.chance}}</p>
+        </li>
+{% endfor %}
+</ul>
+
+
+</div>
+{% endblock content %}

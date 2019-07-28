@@ -27,17 +27,19 @@ def build():
     secret_key = base64.urlsafe_b64decode(fernet_key)
     setup(app, EncryptedCookieStorage(secret_key))
 
-    app.add_routes([web.get("/", handlers.index)])
-    app.add_routes([web.get("/form", handlers.form)])
+    #app.add_routes([web.get("/", handlers.index)])
+    #app.add_routes([web.get("/form", handlers.form)])
     app.add_routes([web.post("/form", handlers.post_form)])
-    app.add_routes([web.get("/admin/tasks", handlers.admin_all_task)])
-    app.add_routes([web.get("/task/{id}", handlers.solution)])
+    #app.add_routes([web.get("/admin/tasks", handlers.admin_all_task)])
+    #app.add_routes([web.get("/task/{id}", handlers.solution)])
+    app.add_routes([web.get("/", handlers.home_page)])
 
-    app.add_routes([web.get("/res/logo", handlers.static_pic_logo)])
+    app.add_routes([web.get("/logo_cos", handlers.static_pic_logo)])
+    app.add_routes([web.get("/logo_cp", handlers.static_pic_logo_cp)])
 
     return app
 
 
 if __name__ == "__main__":
-    web.run_app(build())
+    web.run_app(build(), port=5002)
 
